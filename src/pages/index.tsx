@@ -1,9 +1,9 @@
-import Image from 'next/image';
 import Head from 'next/head';
+import { GetServerSideProps } from 'next';
 import styles from './home.module.scss';
 import { SubscribeButton } from '../components/SubscribeButton';
 
-export default function Home() {
+export default function Home(props) {
   return (
     <>
       <Head>
@@ -23,4 +23,13 @@ export default function Home() {
       </main>
     </>
   )
+}
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  console.log('nada');
+  return {
+    props: {
+      name: 'Diego'
+    }
+  }
 }

@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Head from 'next/head';
 import styles from './home.module.scss';
+import { SubscribeButton } from '../components/SubscribeButton';
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
             Get access to all the publications <br />
             <span>for $9.90 month</span>
           </p>
+          <SubscribeButton/>
         </section>
         <img src="/images/avatar.svg" alt="ig.news"/>
       </main>

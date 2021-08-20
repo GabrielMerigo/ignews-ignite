@@ -9,4 +9,10 @@ export default NextAuth({
       scope: 'read:user' // Pegar os dados mais básicos do github usado pra autenticar
     }),
   ],
+  callbacks: {
+    async signIn(user, account, profile) {
+      console.log(user)
+      return true
+    },
+  }
 })

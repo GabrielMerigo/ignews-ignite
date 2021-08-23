@@ -3,7 +3,6 @@ import { GetStaticProps } from 'next';
 import styles from './home.module.scss';
 import { SubscribeButton } from '../components/SubscribeButton';
 import { stripe } from '../services/stripe';
-import { useEffect } from 'react';
 
 interface HomeProps {
   product: {

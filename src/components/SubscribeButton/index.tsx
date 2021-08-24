@@ -14,7 +14,6 @@ export function SubscribeButton(props: SubscribeButtonProps){
       return;
     }
 
-    
   }
 
   return(

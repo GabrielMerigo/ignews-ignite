@@ -38,14 +38,15 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     try {
       event = stripe.webhooks.constructEvent(buf, secret, process.env.STRIPE_WEBHOOK_SECRET)
     } catch (err) {
+      console.log(err)
       res.status(400).send(`Webhook error: ${err.message}`);
     }
 
     const { type } = event;
 
     if (relevantEvents.has(type)) {
-      console.log(type)
       try {
+        console.log(type)
         switch (type) {
           case 'checkout.subscription.updated':
           case 'checkout.subscription.deleted':
@@ -72,6 +73,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             throw new Error('Unhandled event');
         }
       } catch (err) {
+        console.log(err)
         return res.json({ error: `${err.message}` })
       }
     }

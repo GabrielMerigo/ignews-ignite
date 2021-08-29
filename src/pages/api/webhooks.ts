@@ -46,7 +46,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
     if (relevantEvents.has(type)) {
       try {
-        console.log(type)
+        console.log(type, 'teste')
         switch (type) {
           case 'checkout.subscription.updated':
           case 'checkout.subscription.deleted':
@@ -73,7 +73,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             throw new Error('Unhandled event');
         }
       } catch (err) {
-        console.log(err)
+        console.log(err, 'teste')
         return res.json({ error: `${err.message}` })
       }
     }

@@ -9,8 +9,8 @@ interface SubscribeButtonProps {
 }
 
 export function SubscribeButton(props: SubscribeButtonProps){
-  const [session] = useSession()
-  const router = useRouter
+  const [session] = useSession();
+  const router = useRouter();
 
   async function handleSubscribe(){
     if(!session){
@@ -19,6 +19,7 @@ export function SubscribeButton(props: SubscribeButtonProps){
     }
 
     if(session.activeSubscription){
+      router.push('/posts')
       return;
     }
 
